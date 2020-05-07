@@ -1,6 +1,5 @@
 import H_muscle
 import numpy as np
-
 def main():
 	#We consider three different values of total muscle-tendon length
 	l_mts = np.array([0.30, 0.31, 0.32])

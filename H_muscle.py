@@ -177,15 +177,18 @@ class Hill_type_muscle():
         legends = ['Active Force', 'Total Force']
         y_label = 'Muscle Force [N]'
         x_label = 'Muscle Excitation'
-        plt.figure(figsize=[10, 4.8])
-        plt.tick_params(axis='both', which='major', labelsize=15)
-        plt.xlabel(x_label, fontsize=25)
-        plt.ylabel(y_label, fontsize=25)
-        plt.xlim(0,1)
-        plt.ylim(0,3600)
-        plt.title(title, fontsize=30)
-        plt.plot(u, active_force, 'r-', linewidth=2)
-        plt.plot(u, total_force, 'g', linewidth=2)
-        plt.legend(legends, loc = 'lower right',fontsize=20)
+        fig, ax = plt.subplots()
+        ax.tick_params(axis='both', which='major', labelsize=15)
+        ax.set_ylim(0,3600)
+        ax.set_xlim(0,1)
+        ax.yaxis.get_major_ticks()[0].label1.set_visible(False)         #Hide the first tick
+        ax.plot(u, active_force, 'r', linewidth=4)
+        ax.plot(u, total_force, 'g', linewidth =4)
+        ax.set_ylabel(y_label,fontsize=20)
+        ax.set_xlabel(x_label,fontsize=20)
+        ax.set_title(title,fontsize=20)
+        ax.legend(legends, loc = 'lower right',fontsize=20)
+        fig.set_size_inches(13,7)
         plt.tight_layout()
+        plt.grid()
         plt.show()
