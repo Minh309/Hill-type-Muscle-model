@@ -21,7 +21,7 @@ class Hill_type_muscle():
     # Name: cal_muscle_activation                                                             # 
     # Input: Muscle excitation value (u)                                                      #
     # Output: Muscle activation value (a)                                                     #
-    # This method returns the calculation of muscle activation from muscle excitation profile #
+    # This method returns the muscle activation from muscle excitation profile                #
     ###########################################################################################
     
     def cal_muscle_activation(self, u):
@@ -32,7 +32,7 @@ class Hill_type_muscle():
     # Name: cal_muscle_fiber_length                                                                      # 
     # Input: Total muscle-tendon length (l_mt)                                                           #
     # Output: Muscle fiber length (l_m)                                                                  #
-    # This method returns the calculation of the muscle fiber length from the total muscle-tendon length #
+    # This method returns the muscle fiber length from the total muscle-tendon length                    #
     ######################################################################################################
     
     def cal_muscle_fiber_length(self, l_mt):
@@ -43,7 +43,7 @@ class Hill_type_muscle():
     # Name: cal_normalized_muscle_fiber_length                                                                      #
     # Input: Total muscle-tendon length (l_mt)                                                                      #
     # Output: Normalised Muscle fiber length (l_hat)                                                                #
-    # This method returns the calculation of the normalised muscle fiber length from the total muscle-tendon length #
+    # This method returns the normalised muscle fiber length from the total muscle-tendon length                    #
     #################################################################################################################
 
     def cal_normalized_muscle_fiber_length(self, l_mt):
@@ -77,12 +77,12 @@ class Hill_type_muscle():
         f_p = interpolate.interp1d(x, y, kind = 'cubic')
         return f_p
 
-    ############################################################################################################
-    # Name: get_active_force_length_value                                                                      #
-    # Input: Total muscle-tendon length (l_mt)                                                                 #
-    # Output: Active force-length value corresponding to a specific value of muscle fiber length (f_am)        #
-    # This method returns the active force-length value corresponding to specific value of muscle fiber length #
-    ############################################################################################################
+    ################################################################################################################
+    # Name: get_active_force_length_value                                                                          #
+    # Input: Total muscle-tendon length (l_mt)                                                                     #
+    # Output: Active force-length value corresponding to one specific value of muscle fiber length (f_am)          #
+    # This method returns the active force-length value corresponding to the specific value of muscle fiber length #
+    ################################################################################################################
 
     def get_active_force_length_value(self, l_mt):
         f_a = self.get_active_force_length_function()
@@ -90,12 +90,12 @@ class Hill_type_muscle():
         f_am = f_a(l_hat)
         return f_am
         
-    ###############################################################################################################
-    # Name: get_passive_force_length_value                                                                        #
-    # Input: Total muscle-tendon length (l_mt)                                                                    #
-    # Output: Passive force-length value corresponding to a specific value of muscle fiber length (f_pm)          #
-    # This method returns the passive force-length value corresponding to a specific value of muscle fiber length #
-    ###############################################################################################################
+    #################################################################################################################
+    # Name: get_passive_force_length_value                                                                          #
+    # Input: Total muscle-tendon length (l_mt)                                                                      #
+    # Output: Passive force-length value corresponding to one specific value of muscle fiber length (f_pm)          #
+    # This method returns the passive force-length value corresponding to the specific value of muscle fiber length #
+    #################################################################################################################
         
     def get_passive_force_length_value(self, l_mt):
         f_p = self.get_passive_force_length_function()
@@ -107,7 +107,7 @@ class Hill_type_muscle():
     # Name: mes_active_muscle_force_value                                                                          #
     # Input: Total muscle-tendon length (l_mt)                                                                     #
     # Output: A message                                                                                            #
-    # This method prints a message showing the active force-length value corresponding to a specific value of l_mt #
+    # This method prints a message showing the active force-length value corresponding to the value of l_mt        #
     ################################################################################################################
 
     def mes_active_muscle_force_value(self, l_mt):
@@ -119,7 +119,7 @@ class Hill_type_muscle():
     # Name: mes_passive_muscle_force_value                                                                          #
     # Input: Total muscle-tendon length (l_mt)                                                                      #
     # Output: A message                                                                                             #
-    # This method prints a message showing the passive force-length value corresponding to a specific value of l_mt #
+    # This method prints a message showing the passive force-length value corresponding to the value of l_mt        #
     #################################################################################################################
 
     def mes_passive_muscle_force_value(self, l_mt):
@@ -131,7 +131,7 @@ class Hill_type_muscle():
     # Name: cal_active_muscle_force                                                                       #
     # Input: Total muscle-tendon length (l_mt), muscle excitation value (u)                               #
     # Output: Active muscle force (F_A)                                                                   #
-    # This method returns the calculation of the active muscle force generated by the contractile element #
+    # This method returns the active muscle force generated by the contractile element                    #
     #######################################################################################################
 
     def cal_active_muscle_force(self, l_mt, u):
@@ -144,7 +144,7 @@ class Hill_type_muscle():
     # Name: cal_passive_muscle_force                                                                   #
     # Input: Total muscle-tendon length (l_mt)                                                         #
     # Output: Passive muscle force (F_P)                                                               #
-    # This method returns the calculation of the passive muscle force generated by the passive element #
+    # This method returns the passive muscle force generated by the passive element                    #
     ####################################################################################################
 
     def cal_passive_muscle_force(self, l_mt):
@@ -156,7 +156,7 @@ class Hill_type_muscle():
     # Name: cal_muscle_fiber_force                                          #
     # Input: Total muscle-tendon length (l_mt), muscle excitation value (u) #
     # Output: total muscle fiber force (F_P)                                #
-    # This method returns the calculation of the total muscle force         #
+    # This method returns the total muscle force                            #
     #########################################################################
 
     def cal_muscle_fiber_force(self, l_mt, u):
