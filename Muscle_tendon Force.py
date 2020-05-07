@@ -12,6 +12,9 @@ def main():
 	u = np.linspace(0,1,200)
 	
 	for l_mt in l_mts:
+		#Show the value of active muscle force function
+		Hill_Muscle.mes_active_muscle_force_value(l_mt)
+
 		#Show the value of passive muscle force function
 		Hill_Muscle.mes_passive_muscle_force_value(l_mt)
 		
